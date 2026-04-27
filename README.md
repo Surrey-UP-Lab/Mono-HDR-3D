@@ -23,6 +23,8 @@ cd Mono-HDR-3D
 cd Mono-HDR-GS
 conda create -n mono-hdr-gs python=3.9 -y
 pip install -r requirements.txt
+pip install submodules/diff-gaussian-rasterization --no-build-isolation
+pip install submodules/simple_knn --no-build-isolation
 
 cd ../Mono-HDR-NeRF
 conda create -n mono-hdr-nerf python=3.9 -y
@@ -30,7 +32,7 @@ pip install -r requirements.txt
 ```
 
 ### Download dataset
-We use the an HDR dataset (multi-view and multi-exposure) that contains 8 synthetic scenes rendered with [Blender](https://www.blender.org/) and 4 real scenes captured by a digital camera. Images are collected at 35 different poses in the real dataset, with 5 different exposure time $\{t_1, t_2, t_3, t_4, t_5\}$ at each pose. You can download all the dataset in [here](https://drive.google.com/drive/folders/1OTDLLH8ydKX1DcaNpbQ46LlP0dKx6E-I?usp=sharing). 
+We use the an HDR dataset (multi-view and multi-exposure) that contains 8 synthetic scenes rendered with [Blender](https://www.blender.org/) and 4 real scenes captured by a digital camera. Images are collected at 35 different poses in the real dataset, with 5 different exposure time $\{t_1, t_2, t_3, t_4, t_5\}$ at each pose. You can download all the datasets [here](https://drive.google.com/drive/folders/1OTDLLH8ydKX1DcaNpbQ46LlP0dKx6E-I?usp=sharing). 
 
 ## Train
 For both Mono-HDR-3D and Mono-HDR-NeRF, we provide a bash script to train the model.
